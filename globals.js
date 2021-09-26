@@ -4,7 +4,7 @@ import camelCase from 'lodash/camelCase';
 
 const requireComponent = require.context(
   // Относительный путь до каталога компонентов
-  './base',
+  './src/components/base',
   // Обрабатывать или нет подкаталоги
   false,
   // Регулярное выражение для определения файлов базовых компонентов
