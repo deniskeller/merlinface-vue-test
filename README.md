@@ -12,4 +12,4 @@ npm run serve
 
 ### Customize configuration
 
-See [demo](https://cli.vuejs.org/config/).
+See [demo](https://merlinface-vue-test.vercel.app/).
