@@ -70,14 +70,18 @@ export default {
 <style lang="scss" scoped>
 .category-card {
   font-size: 20px;
-  min-width: res(290, 400);
-  min-height: res(300, 400);
+  width: res(270, 400);
+  min-height: res(280, 350);
   height: 100%;
   border-radius: 20px;
   background: linear-gradient(180deg, #fff, #fff);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
+  @include ifmobile {
+    width: 100%;
+  }
   &__header {
     display: flex;
     flex-direction: row;

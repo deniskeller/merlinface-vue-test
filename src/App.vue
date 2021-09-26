@@ -36,6 +36,13 @@ export default {
 <template>
   <div id="app">
     <BaseHeadline class="headline">Мои дела</BaseHeadline>
+    <BaseButton
+      v-if="categories.length <= 2"
+      class="add_category"
+      @click.native="setPopup('add-category-popup')"
+      >Добавить новую категорию</BaseButton
+    >
+
     <BaseContainer class="content">
       <CategoryCard
         v-for="caterogy in categories"
@@ -46,12 +53,6 @@ export default {
       <div v-if="categories.length == 0" class="catetories-clear">
         Категорий пока нет
       </div>
-      <BaseButton
-        v-if="categories.length <= 2"
-        class="add_category"
-        @click.native="setPopup('add-category-popup')"
-        >Добавить новую категорию</BaseButton
-      >
     </BaseContainer>
 
     <transition name="layout-fade">
@@ -68,6 +69,9 @@ export default {
 #app {
   background: linear-gradient(180deg, #5c26c8, #0f67f0) fixed;
   padding: 40px;
+  @include ifmobile {
+    padding: 10px;
+  }
 }
 
 .headline {
@@ -77,9 +81,6 @@ export default {
 
 .content {
   min-height: 100vh;
-}
-.category-card {
-  margin-bottom: 40px;
 }
 
 .layout__fade {
@@ -104,5 +105,6 @@ export default {
 
 .add_category {
   width: res(290, 400);
+  margin-bottom: 20px;
 }
 </style>
